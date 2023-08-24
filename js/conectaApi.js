@@ -18,7 +18,9 @@ async function criaVideo(titulo, descricao, url, imagem) {
             imagem: imagem
         })
     });
-
+//    if(!conexao.ok){ //se a requisicao de conexao for rejeitada será criado um
+//        throw new Error("Não foi possível adicionar o vídeo")
+//    }
     const conexaoConvertida = conexao.json();
 
     return conexaoConvertida;

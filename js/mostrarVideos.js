@@ -19,9 +19,14 @@ export default function constroiCard(titulo, descricao, url, imagem) {
 }
 
 async function listaVideos() {
-    const listaApi = await conectaApi.listaVideos();// espera o que o listaVideos retornar e armazena na const lista
-    listaApi.forEach(elemento => lista.appendChild( //para cada elemento em listaApi ele vai ser filho da ul com o data-atribute lista
-        constroiCard(elemento.titulo, elemento.descricao, elemento.url, elemento.imagem))) //para cada filho de lista é atribuida a função constroiCard
+    try{
+        const listaApi = await conectaApi.listaVideos();// espera o que o listaVideos retornar e armazena na const lista
+        listaApi.forEach(elemento => lista.appendChild( //para cada elemento em listaApi ele vai ser filho da ul com o data-atribute lista
+            constroiCard(elemento.titulo, elemento.descricao, elemento.url, elemento.imagem))) //para cada filho de lista é atribuida a função constroiCard
+        } catch {
+            lista.innerHTML = `<h2 class="mensagem__titulo">Não foi possível carregar a lista de vídeos</h2>`
+        }
+         
 }
 
 listaVideos();

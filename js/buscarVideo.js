@@ -14,6 +14,13 @@ async function buscarVideo(evento){
 
     busca.forEach(elemento => lista.appendChild( //para cada elemento de busca chama a funcao constroiCard com seus atributos
         constroiCard(elemento.titulo, elemento.descricao, elemento.url, elemento.imagem)))
+
+    if (busca.length == 0){
+        lista.innerHTML = `<div class="div__mensagem">
+        <img src="../img/upload.png" class="mensagem__imagem">
+        <h2 class="mensagem__titulo">Vídeo não encontrado!</h2>
+        </div>`
+    }
 }
 
 const botaoDePesquisa = document.querySelector("[data-botao-pesquisa]") //seleciona botao de pesquisa

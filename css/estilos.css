@@ -56,6 +56,12 @@ body {
     color: black;
 }
 
+.div__mensagem{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
 .mensagem {
     display: grid;
     align-items: center;
@@ -67,10 +73,26 @@ body {
     width: 30%;
 }
 
+.mensagem__espaco {
+    display: block;
+    height: 1rem;
+}
+
 .mensagem__titulo {
     color: var(--azul-medio);
     font-weight: bold;
     font-size: 21px;
+}
+
+.botao__retornar{
+    color: var(--cinza-claro);
+    background: var(--azul-medio);
+    border-radius: 1rem;
+    cursor: pointer;
+    margin: 1rem;
+    padding: 1rem 2rem;
+    position: relative;
+    text-transform: uppercase;
 }
 
 .pesquisar__input {
