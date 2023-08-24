@@ -24,7 +24,15 @@ async function criaVideo(titulo, descricao, url, imagem) {
     return conexaoConvertida;
 }//agora vamos conseguir enviar valores para essa função que vao ser atribuidos a essas propriedades do body
 
+async function buscaVideo(termoDeBusca){ //faz resquisição get para obter elemento(s) na API de acordo com o valor de termoDeBusca
+    const conexao = await fetch(` http://localhost:3000/videos?q=${termoDeBusca} `)
+    const conexaoConvertida = conexao.json()
+
+    return conexaoConvertida
+}
+
 export const conectaApi = {
     listaVideos,
-    criaVideo
-} // exporta funções
+    criaVideo,
+    buscaVideo
+} // exporta funções dentro da constante conectaApi
