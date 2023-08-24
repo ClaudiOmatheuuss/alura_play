@@ -121,6 +121,21 @@ body {
     justify-content: center;
 }
 
+/*estilos de scroll*/
+body::-webkit-scrollbar {
+    width: 10px;              
+}
+  
+body::-webkit-scrollbar-track {
+    background: var(--cinza-texto);
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: var(--azul-medio);    
+    border-radius: 10px;    
+}
+
+
 @media(min-width: 834px) {
 
     body {
