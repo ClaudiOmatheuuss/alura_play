@@ -17,7 +17,7 @@ async function buscarVideo(evento){
 
     if (busca.length == 0){
         lista.innerHTML = `<div class="div__mensagem">
-        <img src="./img/upload.png" class="mensagem__imagem">
+        <img src="./img/erro.png" class="mensagem__imagem">
         <h2 class="mensagem__titulo">Vídeo não encontrado!</h2>
         </div>`
     }
